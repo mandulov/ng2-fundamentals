@@ -16,7 +16,8 @@ import { ToastrService } from './common/toastr.service'
     NavBarComponent
   ],
   providers: [
-    EventService
+    EventService,
+    ToastrService
   ],
   bootstrap: [EventsAppComponent],
 })
