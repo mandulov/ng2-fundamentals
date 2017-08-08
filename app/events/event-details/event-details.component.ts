@@ -2,6 +2,8 @@ import { Component } from '@angular/core'
 import { EventService } from '../shared/event.service'
 import { ActivatedRoute } from '@angular/router'
 
+import { IEvent } from '../shared'
+
 @Component({
   templateUrl: '/app/events/event-details/event-details.component.html',
   styles: [`
@@ -10,7 +12,7 @@ import { ActivatedRoute } from '@angular/router'
   `],
 })
 export class EventDetailsComponent {
-  event: any
+  event: IEvent
 
   constructor(private eventService: EventService, private activatedRoute: ActivatedRoute) {
   }
@@ -19,5 +21,4 @@ export class EventDetailsComponent {
     const id: number = parseInt(this.activatedRoute.snapshot.params['id'], 10)
     this.event = this.eventService.getEvent(id)
   }
-
 }
